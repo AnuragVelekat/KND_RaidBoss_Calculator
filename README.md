@@ -2,6 +2,8 @@
 
 A web application that simulates raid boss battles in the mobile game **Knights and Dragons**. This app calculates damage output and estimates resource (energy and gem) requirements needed to reach specific milestones in the game.
 
+You can test the app [here](https://knd-raidboss-calculator.onrender.com).
+
 ## Features
 
 - **Knight Stats Input:**  
@@ -18,8 +20,5 @@ A web application that simulates raid boss battles in the mobile game **Knights 
   - **Energy Required** (highlighted in yellow)
   - **Gems Required** (highlighted in red)
 
-- **Responsive UI:**  
-  The layout adjusts for mobile devices, stacking the knight cards vertically when necessary.
-
-- **Custom Styling:**  
-  Use custom HTML/CSS for an enhanced visual display of the simulation results.
+## Notes
+The app assumes you have a tier 4 SR Pet and that all attacks are special attacks. Also assumes the first 30 energy spent is F2P from milestones / waiting. Gem calculator might estimate 1 more 90 pack than the required.
