@@ -1,6 +1,6 @@
 # Knights and Dragons Raid Boss Simulator
 
-A Streamlit-based web application that simulates raid boss battles in the mobile game **Knights and Dragons**. This app calculates damage output and estimates resource (energy and gem) requirements needed to reach specific milestones in the game.
+A web application that simulates raid boss battles in the mobile game **Knights and Dragons**. This app calculates damage output and estimates resource (energy and gem) requirements needed to reach specific milestones in the game.
 
 ## Features
 
