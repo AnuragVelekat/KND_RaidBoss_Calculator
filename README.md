@@ -15,10 +15,10 @@ You can test the app [here](https://knd-raidboss-calculator.onrender.com).
 - **Simulation Results:**  
   Run multiple simulations to calculate:
   - **Average Damage**
-  - **Maximum Damage** (highlighted in green)
-  - **Minimum Damage** (highlighted in red)
-  - **Energy Required** (highlighted in yellow)
-  - **Gems Required** (highlighted in red)
+  - **Maximum Damage** 
+  - **Minimum Damage** 
+  - **Energy Required** 
+  - **Gems Required** 
 
 ## Notes
 The app assumes you have a tier 4 SR Pet and that all attacks are special attacks. Also assumes the first 30 energy spent is F2P from milestones / waiting. Gem calculator might estimate 1 more 90 pack than the required.
