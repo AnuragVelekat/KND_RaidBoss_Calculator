@@ -154,3 +154,5 @@ if st.button("Simulate"):
     st.write("---")
     st.caption("This calculator assumes 30 energy is obtained as F2P through milestones / waiting when calculating gems required.")
     st.caption("Note: The estimated amount of gems required might be 1 pack of 90 gems higher than the actual number of gems required.")
+
+st.caption("This calculator assumes you have Tier 4 SR Pet and that every hit is a special attack.")
