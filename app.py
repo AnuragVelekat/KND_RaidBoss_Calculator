@@ -1,7 +1,7 @@
 import streamlit as st
 import random
 
-MULTIPLIER = 0.3076958134411382
+MULTIPLIER = 0.3022818695118992
 
 def calculate_damage(attack, defense, advantage, multiplier=MULTIPLIER):
     if advantage == 0:
@@ -19,19 +19,21 @@ def simulate_single_round(knights, boss):
     b_hp = boss["hp"]
     for knight in knights:
         k_dmg = calculate_damage(knight["attack"], boss["defense"], knight["adv"])
-        b_dmg = calculate_damage(boss["attack"], knight["defense"], knight["disadv"], multiplier=1.5)
+        b_dmg = calculate_damage(boss["attack"], knight["defense"], knight["disadv"], multiplier=1.4)
         k_hp = knight["hp"]
+        count = 0
         while k_hp > 0:
             total_dmg += k_dmg
             b_hp -= k_dmg
             if b_hp <= 0:
                 return total_dmg
             n = random.randint(0, 100)
-            if n > (knight["stc"] + 0.1) * 100:
-                if n % 4 == 0:
+            if n > (knight["stc"] + 0.05) * 100:
+                if count % 4 == 0:
                     k_hp -= 1.5 * b_dmg
                 else:
                     k_hp -= b_dmg
+            count += 1
     return total_dmg
 
 def calc_energy(average, milestone):
@@ -50,7 +52,7 @@ def generate_simulation(knights, boss, n_rounds, milestone=1000000000):
         min_dmg = min(min_dmg, x)
     avg = total_dmg / n_rounds
     energy, n_gems = calc_energy(avg, milestone)
-    return {"average": avg, "maximum": max_dmg, "minimum": min_dmg, "energy": energy, "gems": n_gems}
+    return {"average": avg * 0.95, "maximum": max_dmg * 0.95, "minimum": min_dmg * 0.95, "energy": energy, "gems": n_gems}
 
 # -------------------------------
 # TODO: Update this function after finding out all the boss stats.
@@ -62,7 +64,7 @@ def get_boss_stats(boss_type, level):
     For simplicity, we use the provided level 4 boss as base and scale it.
     """
     # Base boss for level 4 (from your sample code)
-    base_boss = {"attack": 14250, "defense": 3000, "hp": 100000000}
+    base_boss = {"attack": 16220, "defense": 3100, "hp": 100000000}
     # You can add different stats for "Raid Boss" vs "Blitz Boss" if desired.
     # For now, we use the same base but scale with level.
     factor = level / 4  # When level=4, factor will be 1.
@@ -152,6 +154,7 @@ if st.button("Simulate"):
     st.markdown(f"**Energy Required:** <span style='color: yellow'>{results['energy']}</span>", unsafe_allow_html=True)
     st.markdown(f"**Gems Required:** <span style='color: red'>{results['gems']}</span>", unsafe_allow_html=True)
     st.write("---")
+    st.caption("More often than not, you should be more likely to hit closer to the average damage.")
     st.caption("This calculator assumes 30 energy is obtained as F2P through milestones / waiting when calculating gems required.")
     st.caption("Note: The estimated amount of gems required might be 1 pack of 90 gems higher than the actual number of gems required.")
 
