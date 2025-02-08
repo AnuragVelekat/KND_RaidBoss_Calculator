@@ -52,7 +52,7 @@ def generate_simulation(knights, boss, n_rounds, milestone=1000000000):
         min_dmg = min(min_dmg, x)
     avg = total_dmg / n_rounds
     energy, n_gems = calc_energy(avg, milestone)
-    return {"average": avg * 0.95, "maximum": max_dmg * 0.95, "minimum": min_dmg * 0.95, "energy": energy, "gems": n_gems}
+    return {"average": avg * 0.95, "maximum": max_dmg * 0.95, "minimum": min_dmg, "energy": energy, "gems": n_gems}
 
 # -------------------------------
 # TODO: Update this function after finding out all the boss stats.
