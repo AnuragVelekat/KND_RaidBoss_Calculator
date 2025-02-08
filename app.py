@@ -148,8 +148,8 @@ if st.button("Simulate"):
     
     st.markdown("### Results across 100,000 simulations")
     st.write(f"**Average Damage:** {results['average']:.2f}")
-    st.markdown(f"**Maximum Damage:** <span style='color: green'>{results['maximum']:.2f}</span>", unsafe_allow_html=True)
-    st.markdown(f"**Minimum Damage:** <span style='color: red'>{results['minimum']:.2f}</span>", unsafe_allow_html=True)
+    st.markdown(f"**Highest Damage:** <span style='color: green'>{results['maximum']:.2f}</span>", unsafe_allow_html=True)
+    st.markdown(f"**Lowest Damage:** <span style='color: red'>{results['minimum']:.2f}</span>", unsafe_allow_html=True)
     st.write("---")
     st.markdown(f"**Energy Required:** <span style='color: yellow'>{results['energy']}</span>", unsafe_allow_html=True)
     st.markdown(f"**Gems Required:** <span style='color: red'>{results['gems']}</span>", unsafe_allow_html=True)
